@@ -24,7 +24,7 @@ def plot_bar_chart(models, values, title, ylabel, output_path):
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
-    print(f"✅ Saved bar chart: {output_path}")
+    print(f" Saved bar chart: {output_path}")
 
 
 def plot_scatter(x, y, xlabel, ylabel, title, output_path):
@@ -38,7 +38,7 @@ def plot_scatter(x, y, xlabel, ylabel, title, output_path):
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
-    print(f"✅ Saved scatter plot: {output_path}")
+    print(f" Saved scatter plot: {output_path}")
 
 
 if __name__ == "__main__":
