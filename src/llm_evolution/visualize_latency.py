@@ -48,7 +48,7 @@ JSON_PATH = BASE_DIR / "results/output_logs/latency_comparison_summary.json"
 VIS_DIR = BASE_DIR / "results/visualizations"
 VIS_DIR.mkdir(parents=True, exist_ok=True)
 
-print("📂 Loaded paths:")
+print(" Loaded paths:")
 print(f"- CSV: {CSV_PATH}")
 print(f"- JSON: {JSON_PATH}\n")
 
@@ -58,10 +58,10 @@ try:
     with open(JSON_PATH, "r") as f:
         latency_summary = json.load(f)
 except Exception as e:
-    print(f"❌ Error loading data: {e}")
+    print(f" Error loading data: {e}")
     exit()
 
-print("✅ Data loaded successfully!\n")
+print(" Data loaded successfully!\n")
 
 # === Plot 1: Latency Comparison ===
 fig, ax = plt.subplots(figsize=(7, 5))
@@ -107,9 +107,9 @@ plt.savefig(VIS_DIR / "latency_vs_tokens_scatter.png", dpi=300)
 plt.close()
 
 # === Summary ===
-print("🎨 Visualization Completed Successfully!\n")
-print("📊 Figures saved to:")
+print(" Visualization Completed Successfully!\n")
+print(" Figures saved to:")
 print(f"   - {VIS_DIR / 'latency_bar_chart.png'}")
 print(f"   - {VIS_DIR / 'token_usage_chart.png'}")
 print(f"   - {VIS_DIR / 'latency_vs_tokens_scatter.png'}\n")
-print("🎯 Task Completed: Figures ready for inclusion in thesis appendix.")
+print(" Task Completed: Figures ready for inclusion in thesis appendix.")
