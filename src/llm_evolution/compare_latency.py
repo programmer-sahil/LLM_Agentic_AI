@@ -31,17 +31,17 @@ JSON_PATH = RESULTS_DIR / "latency_results.json"
 
 # === Ensure paths exist ===
 if not CSV_PATH.exists():
-    raise FileNotFoundError(f"❌ Missing file: {CSV_PATH}")
+    raise FileNotFoundError(f" Missing file: {CSV_PATH}")
 if not JSON_PATH.exists():
-    raise FileNotFoundError(f"❌ Missing file: {JSON_PATH}")
+    raise FileNotFoundError(f" Missing file: {JSON_PATH}")
 
-print(f"📂 Loaded paths:\n- CSV: {CSV_PATH}\n- JSON: {JSON_PATH}\n")
+print(f" Loaded paths:\n- CSV: {CSV_PATH}\n- JSON: {JSON_PATH}\n")
 
 # === Read CSV for token & latency data ===
 df = pd.read_csv(CSV_PATH)
 
 # === Display token usage comparison ===
-print("📊 Token and Latency Comparison (from CSV)\n")
+print(" Token and Latency Comparison (from CSV)\n")
 print(tabulate(df, headers="keys", tablefmt="github", showindex=False))
 
 # === Read JSON latency log ===
@@ -73,5 +73,5 @@ OUTPUT_JSON = RESULTS_DIR / "latency_comparison_summary.json"
 with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
     json.dump(summary, f, indent=4)
 
-print(f"✅ Comparison summary saved to: {OUTPUT_JSON}")
-print("🎯 Task Completed: You can now include this data in your appendix PDF.")
+print(f" Comparison summary saved to: {OUTPUT_JSON}")
+print("Task Completed: You can now include this data in your appendix PDF.")
