@@ -56,9 +56,9 @@ def analyze_tokenizer(model_name, model_id):
     avg_tokens = round(statistics.mean(token_counts), 2)
     compression_ratio = round(sum(len(text.split()) for text in TEST_TEXTS) / sum(token_counts), 2)
 
-    print(f"✅ Vocabulary Size: {vocab_size}")
-    print(f"🧮 Avg Tokens per Sentence: {avg_tokens}")
-    print(f"📊 Compression Ratio: {compression_ratio}\n")
+    print(f" Vocabulary Size: {vocab_size}")
+    print(f" Avg Tokens per Sentence: {avg_tokens}")
+    print(f" Compression Ratio: {compression_ratio}\n")
 
     return {
         "model": model_name,
@@ -70,7 +70,7 @@ def analyze_tokenizer(model_name, model_id):
 
 # === Main Execution ===
 if __name__ == "__main__":
-    print("📘 Starting Tokenizer Statistics Analysis...\n")
+    print(" Starting Tokenizer Statistics Analysis...\n")
 
     results = []
     for model_name, model_id in MODELS.items():
@@ -93,7 +93,7 @@ if __name__ == "__main__":
             f.write(f"Token Counts: {r['sample_token_counts']}\n")
             f.write("="*50 + "\n")
 
-    print("💾 Results Saved Successfully!")
-    print(f"📂 JSON: {json_path}")
-    print(f"📂 Summary: {summary_path}")
-    print("\n🎯 Task Completed: Tokenizer statistics ready for visualization or appendix inclusion.")
+    print(" Results Saved Successfully!")
+    print(f" JSON: {json_path}")
+    print(f" Summary: {summary_path}")
+    print("\n Task Completed: Tokenizer statistics ready for visualization or appendix inclusion.")
