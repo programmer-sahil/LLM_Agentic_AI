@@ -42,14 +42,14 @@ SUMMARY_JSON = RESULTS_DIR / "crewai_pipeline_summary.json"
 # === Configuration ===
 MODEL_ID = "microsoft/phi-2"
 DEVICE = "cuda"
-print(f"\n🔹 Loading model: {MODEL_ID} ...")
+print(f"\n Loading model: {MODEL_ID} ...")
 
 start_load = time.time()
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
 llm = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 load_time = time.time() - start_load
-print(f"✅ Model loaded successfully in {load_time:.2f}s\n")
+print(f" Model loaded successfully in {load_time:.2f}s\n")
 
 
 # === Define Agent Functions ===
@@ -76,13 +76,13 @@ def worker_agent(subtask: str):
 
 def coordinator(goal: str):
     """Coordinates planner and worker communication."""
-    print("🧩 Starting CrewAI-style multi-agent collaboration...\n")
+    print(" Starting CrewAI-style multi-agent collaboration...\n")
     conversation_log = []
     start_time = time.time()
 
     # Phase 1: Planning
     plan = planner_agent(goal)
-    print("🧠 Planner Agent generated subtasks.\n")
+    print(" Planner Agent generated subtasks.\n")
     conversation_log.append({"role": "planner", "content": plan})
 
     # Extract subtasks (simple heuristic split)
@@ -91,11 +91,11 @@ def coordinator(goal: str):
     # Phase 2: Worker Execution
     all_results = []
     for idx, subtask in enumerate(subtasks, start=1):
-        print(f"⚙️ Worker executing subtask {idx} ...")
+        print(f" Worker executing subtask {idx} ...")
         result = worker_agent(subtask)
         conversation_log.append({"role": f"worker_{idx}", "content": result})
         all_results.append(f"Subtask {idx}: {result}\n")
-        print(f"✅ Subtask {idx} completed.\n")
+        print(f" Subtask {idx} completed.\n")
 
     # Phase 3: Synthesis
     summary_prompt = (
@@ -107,7 +107,7 @@ def coordinator(goal: str):
     conversation_log.append({"role": "coordinator", "content": final_summary})
 
     total_time = round(time.time() - start_time, 2)
-    print("🎯 Multi-Agent Collaboration Completed!\n")
+    print(" Multi-Agent Collaboration Completed!\n")
 
     return final_summary, conversation_log, total_time
 
@@ -121,7 +121,7 @@ goal = (
 final_summary, logs, duration = coordinator(goal)
 
 # === Save Logs ===
-print("💾 Saving conversation logs...")
+print("Saving conversation logs...")
 with open(LOG_FILE, "w", encoding="utf-8") as f:
     for entry in logs:
         f.write(f"[{entry['role'].upper()}]\n{entry['content']}\n\n")
@@ -137,9 +137,9 @@ summary_data = {
 with open(SUMMARY_JSON, "w", encoding="utf-8") as f:
     json.dump(summary_data, f, indent=4)
 
-print("✅ Logs and summary saved successfully!")
-print(f"📂 Log File: {LOG_FILE}")
-print(f"📂 Summary JSON: {SUMMARY_JSON}")
+print(" Logs and summary saved successfully!")
+print(f" Log File: {LOG_FILE}")
+print(f" Summary JSON: {SUMMARY_JSON}")
 print("=======================================================")
-print("🎯 Task Completed: CrewAI-Style Multi-Agent Pipeline executed successfully.")
+print(" Task Completed: CrewAI-Style Multi-Agent Pipeline executed successfully.")
 print("=======================================================\n")
