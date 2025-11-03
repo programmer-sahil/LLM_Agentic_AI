@@ -41,7 +41,7 @@ RESULTS_CSV.parent.mkdir(parents=True, exist_ok=True)
 
 # === Model info ===
 MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-print(f"\n🔹 Loading model: {MODEL_ID} ...")
+print(f"\n Loading model: {MODEL_ID} ...")
 
 start_load = time.time()
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -49,7 +49,7 @@ model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 load_time = time.time() - start_load
 
-print(f"✅ Model loaded successfully in {load_time:.2f} seconds.\n")
+print(f" Model loaded successfully in {load_time:.2f} seconds.\n")
 
 # === Prompt for inference ===
 prompt = (
@@ -58,7 +58,7 @@ prompt = (
 )
 
 # === Generate response ===
-print("🧠 Generating output...")
+print(" Generating output...")
 start_time = time.time()
 response = generator(prompt, max_new_tokens=150, do_sample=False)[0]["generated_text"]
 end_time = time.time()
@@ -78,7 +78,7 @@ print("=====================================================\n")
 print(f"Generated Text:\n{response}\n")
 
 # === Save outputs ===
-print("💾 Saving results...")
+print(" Saving results...")
 
 # Save generated text
 with open(RESULTS_TEXT, "w", encoding="utf-8") as f:
@@ -103,10 +103,10 @@ meta = {
 with open(RESULTS_META, "w", encoding="utf-8") as f:
     json.dump(meta, f, indent=4)
 
-print("✅ All results saved successfully!")
-print("📂 Files generated:")
+print(" All results saved successfully!")
+print(" Files generated:")
 print(f"   - {RESULTS_TEXT}")
 print(f"   - {RESULTS_CSV}")
 print(f"   - {RESULTS_META}")
 print("\n=====================================================")
-print("🎯 Task Completed: You can now move to Phi-2 inference next.")
+print(" Task Completed: You can now move to Phi-2 inference next.")
