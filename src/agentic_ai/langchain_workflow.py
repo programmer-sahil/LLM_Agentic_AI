@@ -41,7 +41,7 @@ SUMMARY_FILE = RESULTS_DIR / "langchain_session_summary.json"
 
 # === Configuration ===
 MODEL_ID = "microsoft/phi-2"
-print(f"\n🔹 Loading model: {MODEL_ID} ...")
+print(f"\n Loading model: {MODEL_ID} ...")
 
 start_load = time.time()
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -49,7 +49,7 @@ model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
 llm = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 load_time = round(time.time() - start_load, 2)
 
-print(f"✅ Model loaded successfully in {load_time} seconds.\n")
+print(f" Model loaded successfully in {load_time} seconds.\n")
 
 
 # === Define Tool (Simple Math Tool) ===
@@ -104,19 +104,19 @@ def langchain_agent(task: str):
     memory.append({"final": step3_response})
 
     total_time = round(time.time() - start_time, 2)
-    print("🎯 LangChain-style reasoning completed successfully!\n")
+    print(" LangChain-style reasoning completed successfully!\n")
 
     return reasoning_log, total_time
 
 
 # === Run Experiment ===
 TASK = "Calculate 24 / 3 + 12, then explain how reasoning agents use tools to enhance LLM decision-making."
-print(f"🧠 Starting reasoning task:\n{TASK}\n")
+print(f" Starting reasoning task:\n{TASK}\n")
 
 logs, exec_time = langchain_agent(TASK)
 
 # === Save Logs ===
-print("💾 Saving logs and summary...\n")
+print(" Saving logs and summary...\n")
 with open(LOG_FILE, "w", encoding="utf-8") as f:
     for entry in logs:
         f.write(f"[{entry['step'].upper()}]\n{entry['response']}\n\n")
@@ -133,9 +133,9 @@ summary = {
 with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
     json.dump(summary, f, indent=4)
 
-print("✅ All files saved successfully!")
-print(f"📂 Reasoning Log: {LOG_FILE}")
-print(f"📂 Summary JSON: {SUMMARY_FILE}")
+print(" All files saved successfully!")
+print(f" Reasoning Log: {LOG_FILE}")
+print(f" Summary JSON: {SUMMARY_FILE}")
 print("=======================================================")
-print("🎯 Task Completed: LangChain-style reasoning workflow executed successfully.")
+print(" Task Completed: LangChain-style reasoning workflow executed successfully.")
 print("=======================================================")
