@@ -1,0 +1,24 @@
+# Hardware and Software Specifications
+Thesis Project: From Transformers to Agents
+Author: SK Sahil
+Date: 25th October 2025
+
+## System Information
+- Device: MacBook Air (M1, Apple Silicon)
+- macOS Version: macOS 26.0.1 (Build 25A362)
+- Python Version: 3.12.7 (Anaconda)
+- Environment Manager: Conda (base environment)
+
+## Hardware Details
+- CPU: Apple M1 8-Core (4 performance + 4 efficiency)
+- GPU: Apple M1 Integrated Neural Engine (8-Core)
+- RAM: 8 GB Unified Memory
+
+## Key Libraries
+- Transformers ✅ Installed
+- Torch / PyTorch ✅ Installed (planned)
+- LangChain, CrewAI, AutoGen – upcoming installations
+
+## Verification Log
+✅ Transformers installed correctly!
+(Verified via terminal: `from transformers import pipeline`)

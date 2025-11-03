@@ -1,0 +1,1 @@
+In 5 concise bullet points, explain what 'Retrieval-Augmented Generation (RAG)' is and how it improves the capabilities of Large Language Models. Provide specific examples of how RAG can be used in NLP applications, such as generating summaries or answering questions. Use clear and concise language, and avoid technical jargon where possible.

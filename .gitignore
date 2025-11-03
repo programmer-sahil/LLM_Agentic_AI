@@ -1,0 +1,50 @@
+# ===============================================================
+#  .gitignore for Thesis Project: From Transformers to Agents
+#  Author: SK Sahil
+#  Purpose: Prevent large, auto-generated, or system-specific files
+#  from being tracked in the Git repository.
+# ===============================================================
+
+#  Python Cache & Build Artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+build/
+dist/
+
+#  Virtual Environment Folders
+
+venv/
+.venv/
+
+#  Notebook & IDE Cache Files
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+*.DS_Store
+*.vscode/
+*.idea/
+*.swp
+*.swo
+
+
+
+#  Model & Tokenizer Files (optional large objects)
+models/
+checkpoints/
+cache/
+*.bin
+*.pt
+*.h5
+*.pkl
+
+# ️ OS / System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+

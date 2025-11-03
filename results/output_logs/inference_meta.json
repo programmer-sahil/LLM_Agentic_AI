@@ -1,0 +1,9 @@
+{
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "runtime_seconds": 19.24411106109619,
+    "system": "Linux-6.6.105+-x86_64-with-glibc2.35",
+    "python_version": "3.12.12",
+    "total_tokens": 81,
+    "device": "auto (CPU or MPS)",
+    "note": "TinyLlama inference test for B.Sc. thesis (LLM evolution phase)"
+}

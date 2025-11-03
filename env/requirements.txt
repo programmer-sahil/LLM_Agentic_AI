@@ -1,0 +1,17 @@
+transformers
+torch
+sentencepiece
+datasets
+accelerate
+evaluate
+pandas
+numpy
+matplotlib
+seaborn
+tqdm
+scikit-learn
+notebook
+jupyterlab
+langchain
+crewai
+openai

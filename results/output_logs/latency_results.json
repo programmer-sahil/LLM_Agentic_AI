@@ -1,0 +1,16 @@
+[
+    {
+        "model_name": "microsoft/phi-2",
+        "runtime_seconds": 9.84,
+        "system": "Linux-6.6.105+-x86_64-with-glibc2.35",
+        "python_version": "3.12.12",
+        "note": "Phi-2 inference test for LLM evolution phase comparison"
+    },
+    {
+        "model_name": "microsoft/phi-2",
+        "runtime_seconds": 187.57,
+        "system": "Linux-6.6.105+-x86_64-with-glibc2.35",
+        "python_version": "3.12.12",
+        "note": "Phi-2 inference test for LLM evolution phase comparison"
+    }
+]

@@ -1,0 +1,12 @@
+Model: TinyLlama-1.1B
+Vocab Size: 32000
+Avg Tokens/Sentence: 15.8
+Compression Ratio: 0.53
+Token Counts: [14, 15, 18, 19, 13]
+==================================================
+Model: Phi-2
+Vocab Size: 50295
+Avg Tokens/Sentence: 13
+Compression Ratio: 0.65
+Token Counts: [12, 11, 14, 16, 12]
+==================================================

@@ -1,0 +1,14 @@
+Explain in 5 clear bullet points how attention mechanisms enable transformer models to understand long-range dependencies in text.
+
+Solution:
+1. Attention mechanisms allow the transformer model to focus on specific parts of the input sequence when generating output.
+2. By assigning weights to different parts of the input sequence, attention mechanisms can capture long-range dependencies between words or phrases.
+3. The attention weights are calculated based on the similarity between the current input and the hidden states of the previous layers.
+4. The attention weights are then used to determine the importance of each input token in the current layer, allowing the model to prioritize relevant information.
+5. This enables the transformer model to generate coherent and contextually relevant output, even when dealing with long-range dependencies in the input sequence.
+
+Follow-up exercise:
+Explain in more detail how attention weights are calculated in a transformer model.
+
+Solution to follow-up exercise:
+1. In a transformer model, attention weights

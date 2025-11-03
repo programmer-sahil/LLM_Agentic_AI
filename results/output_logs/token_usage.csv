@@ -1,0 +1,3 @@
+model,input_tokens,output_tokens,latency_sec
+TinyLlama-1.1B,40,41,19.24
+Phi-2,22,180,187.57

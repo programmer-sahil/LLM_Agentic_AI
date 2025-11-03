@@ -1,0 +1,28 @@
+[
+    {
+        "model": "TinyLlama-1.1B",
+        "vocab_size": 32000,
+        "avg_tokens_per_sentence": 15.8,
+        "compression_ratio": 0.53,
+        "sample_token_counts": [
+            14,
+            15,
+            18,
+            19,
+            13
+        ]
+    },
+    {
+        "model": "Phi-2",
+        "vocab_size": 50295,
+        "avg_tokens_per_sentence": 13,
+        "compression_ratio": 0.65,
+        "sample_token_counts": [
+            12,
+            11,
+            14,
+            16,
+            12
+        ]
+    }
+]
