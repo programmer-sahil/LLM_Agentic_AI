@@ -39,7 +39,7 @@ SUMMARY_FILE = RESULTS_DIR / "open_devin_session_summary.json"
 
 # === Configuration ===
 MODEL_ID = "microsoft/phi-2"
-print(f"\n🔹 Loading model: {MODEL_ID} ...")
+print(f"\n Loading model: {MODEL_ID} ...")
 
 start_load = time.time()
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -47,7 +47,7 @@ model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
 llm = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 load_time = round(time.time() - start_load, 2)
 
-print(f"✅ Model loaded successfully in {load_time} seconds.\n")
+print(f" Model loaded successfully in {load_time} seconds.\n")
 
 
 # === Define the Developer Agent ===
@@ -97,12 +97,12 @@ TASK = (
     "Write a Python function to calculate Fibonacci numbers using recursion. "
     "Then print the first 10 numbers and ensure the code is optimized for readability."
 )
-print(f"💻 Starting OpenDevin-style coding task:\n{TASK}\n")
+print(f" Starting OpenDevin-style coding task:\n{TASK}\n")
 
 logs, exec_time = autonomous_dev_agent(TASK)
 
 # === Save Logs ===
-print("💾 Saving logs and summary...\n")
+print(" Saving logs and summary...\n")
 with open(LOG_FILE, "w", encoding="utf-8") as f:
     for entry in logs:
         f.write(f"[{entry['step'].upper()}]\n{entry['response']}\n\n")
@@ -120,9 +120,9 @@ summary = {
 with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
     json.dump(summary, f, indent=4)
 
-print("✅ All files saved successfully!")
-print(f"📂 Reasoning Log: {LOG_FILE}")
-print(f"📂 Summary JSON: {SUMMARY_FILE}")
+print(" All files saved successfully!")
+print(f" Reasoning Log: {LOG_FILE}")
+print(f" Summary JSON: {SUMMARY_FILE}")
 print("=======================================================")
-print("🎯 Task Completed: OpenDevin-style autonomous developer workflow executed successfully.")
+print(" Task Completed: OpenDevin-style autonomous developer workflow executed successfully.")
 print("=======================================================")
