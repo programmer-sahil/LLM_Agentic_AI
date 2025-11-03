@@ -50,7 +50,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
 agent = pipeline("text-generation", model=model, tokenizer=tokenizer, device_map="auto")
 load_time = time.time() - start_load
-print(f"✅ Model loaded successfully in {load_time:.2f}s\n")
+print(f" Model loaded successfully in {load_time:.2f}s\n")
 
 
 # === Agentic Reasoning Loop ===
@@ -60,10 +60,10 @@ def autogpt_reasoning(task_prompt: str, reflection_cycles: int = 2):
     """
     logs = []
     current_prompt = task_prompt
-    print("🧠 Starting AutoGPT-style reasoning...\n")
+    print(" Starting AutoGPT-style reasoning...\n")
 
     for cycle in range(reflection_cycles):
-        print(f"🔁 Cycle {cycle + 1}/{reflection_cycles}")
+        print(f" Cycle {cycle + 1}/{reflection_cycles}")
         start = time.time()
 
         response = agent(
@@ -101,7 +101,7 @@ def autogpt_reasoning(task_prompt: str, reflection_cycles: int = 2):
             f"Improve this answer based on the reflection:\n{reflection}\n\nPrevious answer:\n{response}"
         )
 
-        print(f"✅ Cycle {cycle + 1} complete ({latency}s)\n")
+        print(f" Cycle {cycle + 1} complete ({latency}s)\n")
 
     final_output = logs[-1]["response"] if logs else "No output"
     return final_output, logs
@@ -117,7 +117,7 @@ task = (
 final_answer, reasoning_logs = autogpt_reasoning(task, REFLECTION_CYCLES)
 
 # === Save results ===
-print("💾 Saving session logs...")
+print(" Saving session logs...")
 with open(LOG_FILE, "w", encoding="utf-8") as f:
     for entry in reasoning_logs:
         f.write(f"--- Cycle {entry['cycle']} ---\n")
@@ -137,9 +137,9 @@ summary = {
 with open(SUMMARY_JSON, "w", encoding="utf-8") as f:
     json.dump(summary, f, indent=4)
 
-print("✅ Session saved successfully!")
-print(f"📂 Log File: {LOG_FILE}")
-print(f"📂 Summary JSON: {SUMMARY_JSON}\n")
+print(" Session saved successfully!")
+print(f" Log File: {LOG_FILE}")
+print(f" Summary JSON: {SUMMARY_JSON}\n")
 print("=======================================================")
-print("🎯 Task Completed: AutoGPT Reflection Demo executed successfully.")
+print(" Task Completed: AutoGPT Reflection Demo executed successfully.")
 print("=======================================================\n")
