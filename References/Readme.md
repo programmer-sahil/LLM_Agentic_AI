@@ -1,3 +1,5 @@
+# References 
+
 - Amaratunga, T. (2023). Popular LLMs (pp. 119–130). Apress. https://doi.org/10.1007/979-8-8688-0017-7_5
 - Badea, C. (2023). Minimum levels of interpretability for artificial moral agents. arXiv.Org, abs/2307.00660. https://doi.org/10.48550/arXiv.2307.00660
 - Bahani, M., El Ouaazizi, A., & Maalmi, K. (2023). The effectiveness of T5, GPT-2, and BERT on text-to-image generation task. Pattern Recognition Letters, 173, 57–63. https://doi.org/10.1016/j.patrec.2023.08.001
