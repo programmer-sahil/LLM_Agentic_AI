@@ -4,6 +4,9 @@ This repository contains all source code, Jupyter notebooks, datasets, and docum
 
 ---
 
+<img width="483" height="606" alt="image" src="https://github.com/user-attachments/assets/560c7a19-3fc3-4079-945f-9d40fb49850a" />
+
+
 ##  Folder Overview
 
 |  Folder |  Description |
